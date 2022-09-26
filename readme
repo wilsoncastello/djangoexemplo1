@@ -1,1 +1,47 @@
-teste
+Usuário: postgres
+Senha: aluno
+
+https://www.enterprisedb.com/postgresql-tutorial-resources-training?uuid=db55e32d-e9f0-4d7c-9aef-b17d01210704&campaignId=7012J000001NhszQAC
+
+Link com tutoriais sobre como conectar o PostgreSQL com várias ferramentas inclusive Django e Vue.
+
+
+
+Passos para replicar o projeto em outras máquinas:
+
+1) Instalar o python caso ele não esteja instalado.
+
+2) Instalar o PostgreSQL caso ele não esteja instalado.
+
+3) Clonar o repositório https://github.com/wilsoncastello/exemploseletiva.git
+
+13) Baixar a pasta Exemplos disponível no Github. OU 2) Criar uma pasta para salvar os ambientes virtuais, por exemplo: venvs.    3) Dentro da pasta criada no ítem 2, criar o ambiente virtual com o comando "python -m venv exemplo1". 6) Criar uma pasta para os projetos, por exemplo: projetos.  7) Criar um novo projeto dentro da pasta criada no item 6, com o comando "django-admin startproject exemplo1"
+
+4) Ativar o ambiente virtual executando o comando exemplo1\Scripts\activate.bat.
+
+5) Instalar o Django com o comando pip install Django, caso ele não esteja instalado.
+
+
+
+8) Entrar na pasta projetos/exemplo1 e rodar o servidor com o comando "python manage.py runserver"
+
+
+
+10) Instalar o driver do PostgreSQL para python com o comando "pip install psycopg2-binary"
+
+11) Instalar a biblioteca que permite a criação de um arquivo separado para configuração de acesso ao banco de dados com o comando "pip install python-decouple"
+
+12) Criar um banco de dados vazio, com os dados abaixo. Caso algum dado de acesso do banco seja diferente dos dados abaixo, eles podem ser alterados no arquivo .env disponível na pasta exemplo1.
+DB_NAME = exemplo1db
+DB_USER = postgres
+DB_PASSWORD = aluno
+DB_HOST = localhost
+DB_PORT = 5432
+
+
+
+14) Criar um superusuário com o comando "python manage.py createsuperuser" e preencher os campos conforme modelo abaixo.
+Username (leave blank to use 'castello'): aluno
+Email address: aluno@ifsc.edu.br	
+Password: aluno
+Password (again): aluno
