@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }} - Lista de Compromissos
+{% endblock title  %}
+    
+
+{% block body %}
+    <div class="container">
+        <h1> Lista de Compromissos </h1>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Prioridade</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for compromisso in compromissos %}
+                            <tr>
+                                <th scope="row"> {{ compromisso.id }} </th>
+                                <td>{{ compromisso.titulo }} </td>
+                                <td>{{ compromisso.descricao }} </td>
+                                <td>{{ compromisso.data }} </td>
+                                <td>{{ compromisso.hora }} </td>
+                                <td>{{ compromisso.get_prioridade_display }} </td>
+                                <td>{{ compromisso.get_status_display }} </td>                        
+                                <td>
+                                    <a href="{% url 'core:edita_compromisso' compromisso.id %}" class="btn btn-primary btn-sm"> Editar </a>
+                                    <a href="{% url 'core:exclui_compromisso' compromisso.id %}" class="btn btn-danger btn-sm"> Excluir </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
